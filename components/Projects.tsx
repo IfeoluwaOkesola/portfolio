@@ -2,7 +2,7 @@ const projects = [
   {
     title: "Cloud Infrastructure for Retail Microservices",
     description:
-      "Provisioned AWS infrastructure for a retail application on Amazon EKS using Terraform, including segmented networking, load balancing, IAM/RBAC access control, and CI/CD workflows.",
+      "Provisioned AWS infrastructure for a retail application on Amazon EKS using Terraform, including segmented networking, load balancing, IAM/RBAC access control, and CI/CD workflows. Designed for real-world deployment and operational efficiency.",
     impact: [
       "Designed reproducible infrastructure using Terraform",
       "Deployed microservices to EKS with private worker nodes",
@@ -23,6 +23,7 @@ const projects = [
     github:
       "https://github.com/IfeoluwaOkesola/innovatemart-project-bedrock-infra",
     note: "Infrastructure is currently offline to optimize cloud costs. The repository contains reproducible infrastructure code and setup instructions.",
+    featured: true,
   },
   {
     title: "Driver Offense Tracking System",
@@ -81,19 +82,18 @@ export default function Projects() {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="p-8 bg-white border border-gray-200 rounded-3xl shadow-sm hover:shadow-lg hover:-translate-y-1 transition duration-300"
+              className={`p-8 rounded-3xl transition duration-300 ${
+                project.featured
+                  ? "bg-gradient-to-br from-slate-100 to-white border border-slate-300 shadow-md hover:shadow-lg hover:-translate-y-1"
+                  : "bg-white border border-gray-200 shadow-sm hover:shadow-md hover:-translate-y-1"
+              }`}
             >
-              {/* Title */}
-              <h3 className="text-2xl font-semibold mb-3">
-                {project.title}
-              </h3>
+              <h3 className="text-2xl font-semibold mb-3">{project.title}</h3>
 
-              {/* Description */}
               <p className="text-gray-700 mb-5 leading-relaxed">
                 {project.description}
               </p>
 
-              {/* Impact */}
               <div className="mb-5">
                 <h4 className="font-semibold mb-2">Impact</h4>
                 <ul className="list-disc list-inside text-gray-700 space-y-1">
@@ -103,19 +103,21 @@ export default function Projects() {
                 </ul>
               </div>
 
-              {/* Stack */}
               <div className="flex flex-wrap gap-3 mb-5">
                 {project.stack.map((tech, i) => (
                   <span
                     key={i}
-                    className="px-4 py-2 bg-gray-100 rounded-full text-sm"
+                    className={`px-4 py-2 rounded-full text-sm ${
+                      project.featured
+                        ? "bg-slate-900 text-white"
+                        : "bg-gray-100 text-black"
+                    }`}
                   >
                     {tech}
                   </span>
                 ))}
               </div>
 
-              {/* GitHub Button (only shows if exists) */}
               {project.github && (
                 <div className="mb-5">
                   <a
@@ -129,10 +131,7 @@ export default function Projects() {
                 </div>
               )}
 
-              {/* Note */}
-              <p className="text-sm text-gray-500 italic">
-                {project.note}
-              </p>
+              <p className="text-sm text-gray-500 italic">{project.note}</p>
             </div>
           ))}
         </div>

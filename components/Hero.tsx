@@ -14,9 +14,9 @@ export default function Hero() {
           </h1>
 
           <p className="mt-5 text-lg md:text-xl text-gray-600 max-w-xl leading-relaxed">
-            I build scalable, secure, and efficient backend systems with
-            NestJS, TypeScript, databases, and cloud infrastructure.
-          </p>
+  I design and build scalable backend systems, automate workflows, and deploy 
+  production-ready infrastructure using NestJS, TypeScript, and AWS.
+</p>
 
           <div className="mt-8 flex flex-wrap gap-4">
             <a
