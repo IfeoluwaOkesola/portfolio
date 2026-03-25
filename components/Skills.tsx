@@ -4,6 +4,10 @@ const skills = [
     items: ["Node.js", "NestJS", "GraphQL", "REST APIs"],
   },
   {
+    category: "Languages",
+    items: ["JavaScript", "TypeScript", "C#"],
+  },
+  {
     category: "Databases",
     items: ["PostgreSQL", "MongoDB", "MySQL", "MSSQL"],
   },
@@ -13,7 +17,7 @@ const skills = [
   },
   {
     category: "Tools & Others",
-    items: ["TypeScript", "C#", "Swagger", "Postman", "Git"],
+    items: ["Swagger", "Postman", "Git", "Contentful CMS"],
   },
 ];
 
