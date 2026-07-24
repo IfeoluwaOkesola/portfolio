@@ -10,7 +10,7 @@ export default function About() {
 
         <div className="space-y-5 text-lg text-gray-700 leading-relaxed">
           <p>
-            I am a fullstack engineer with over 3 years of experience building scalable,
+            I am a software engineer with over 3 years of experience building scalable,
             secure, and efficient systems. I specialize in designing robust APIs and
             backend architectures using technologies like NestJS, TypeScript, and Node.js.
           </p>
